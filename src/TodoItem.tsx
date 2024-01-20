@@ -10,7 +10,7 @@ function TodoItem({ todo, deleteTodo, toggleCompleted }: { todo: TodoProps, dele
         onChange={() => toggleCompleted(todo.id)}
       />
       <p className={todo.completed ? 'completed' : ''}>{todo.text}</p>
-      <button onClick={() => deleteTodo(todo.id)} >X</button>
+      <button className="deleteButton" onClick={() => deleteTodo(todo.id)} >X</button>
     </div>
   )
 }

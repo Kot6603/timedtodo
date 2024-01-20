@@ -48,19 +48,21 @@ function TodoList(): React.ReactElement {
       <form onSubmit={e => {
         e.preventDefault()
         addTodo(text)
-      }}>
+      }} className="todoForm">
         <input type="text" value={text} onChange={e => setText(e.target.value)} />
         <button type="submit">Add Task</button>
       </form>
 
-      {todos.map(todo => (
-        <TodoItem
-          key={todo.id}
-          todo={todo}
-          deleteTodo={deleteTodo}
-          toggleCompleted={toggleCompleted}
-        />
-      ))}
+      <div className="todo-list-items">
+        {todos.map(todo => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            deleteTodo={deleteTodo}
+            toggleCompleted={toggleCompleted}
+          />
+        ))}
+      </div>
 
     </div >
   )
